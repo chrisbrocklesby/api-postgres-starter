@@ -1,5 +1,5 @@
 {
-  "name": "api-rest-postgres",
+  "name": "api-postgres-starter",
   "version": "1.0.0",
   "description": "REST API built with PostgreSQL, Validation, Session Auth.",
   "main": "index.js",

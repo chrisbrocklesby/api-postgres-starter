@@ -15,4 +15,4 @@ app.use(cookieParser(process.env.COOKIE_KEY));
 
 routes(app);
 
-app.listen(process.env.PORT, () => console.log('API Server running... 🌎 🚀'));
+app.listen(process.env.PORT, '0.0.0.0', () => console.log('API Server running... 🌎 🚀'));
