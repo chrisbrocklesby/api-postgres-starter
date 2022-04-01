@@ -6,7 +6,7 @@ export const sql = (() => {
   });
   return {
     query: (text, params) => {
-      if (process.env.NODE_ENV === 'development') { console.info(text); }
+      if (process.env.NODE_ENV === 'development') { console.log(text); }
       return pool.query(text, params);
     },
     ...pool,
