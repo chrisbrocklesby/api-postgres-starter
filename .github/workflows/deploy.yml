@@ -32,12 +32,13 @@ jobs:
         script: |
           cd /builds/${{ github.event.repository.name }}
           cat > .env << EOF 
-          ${{ secrets.ENV }} 
+          ${{ secrets }} 
           EOF
           docker build . -t ${{ github.event.repository.name }}
           docker stop ${{ github.event.repository.name }}
           docker rm ${{ github.event.repository.name }}
           docker run -d \
+            -e PORT=3000 \
             --env-file .env \
             --network apps \
             --restart unless-stopped \
