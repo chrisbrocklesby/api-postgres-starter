@@ -35,6 +35,7 @@ jobs:
           docker stop ${{ github.event.repository.name }}
           docker rm ${{ github.event.repository.name }}
           docker run -d \
+            -e PORT=3000
             -e PG_DATABASE_URL=postgres://postgres:Chris1981@postgres:5432/api-postgres-starter \
             -e COOKIE_KEY=Ap9P@55k3y4u93opl3 \
             -e EMAIL_API_TOKEN=f7060053-fbf7-4e3d-87f3-dbea453abfaa \
