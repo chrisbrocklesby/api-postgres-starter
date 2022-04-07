@@ -36,7 +36,7 @@ jobs:
           docker rm ${{ github.event.repository.name }}
           docker run -d \
             --env PORT=3000 \
-            --env PG_DATABASE_URL=postgres:Chris1981@postgres:5432/api-postgres-starter \
+            --env PG_DATABASE_URL=postgres://postgres:Chris1981@postgres:5432/api-postgres-starter \
             --env COOKIE_KEY=Ap9P@55k3y4u93opl3 \
             --env EMAIL_API_TOKEN=f7060053-fbf7-4e3d-87f3-dbea453abfaa \
             --env EMAIL_FROM=postmark@chrisbrocklesby.com \
