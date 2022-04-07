@@ -38,7 +38,7 @@ jobs:
           docker stop ${{ github.event.repository.name }}
           docker rm ${{ github.event.repository.name }}
           docker run -d \
-            --env-file ./.env \
+            --env-file .env \
             --network apps \
             --restart unless-stopped \
             --name ${{ github.event.repository.name }} ${{ github.event.repository.name }}
