@@ -12,8 +12,8 @@ export const create = async ({ title, body }) => (
 export const update = async (id, { title, body }) => (
   await sql.query(`
   UPDATE posts SET
-  "title" = ${(title === undefined) ? 'COALESCE($2, title)' : '$2'},
-  "body" = ${(body === undefined) ? 'COALESCE($3, body)' : '$3'},
+  "title" = COALESCE($2, title),
+  "body" = COALESCE($3, body),
   "updatedAt" = now()
   WHERE "id" = $1
   RETURNING "id"`,
